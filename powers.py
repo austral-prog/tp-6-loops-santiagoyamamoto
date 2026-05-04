@@ -1,5 +1,4 @@
 # Replace the "ANSWER HERE" for your answer
-from fontTools.diff.color import ansicolors
 
 
 def power(base, exp):

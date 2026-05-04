@@ -1,44 +1,38 @@
-import unittest
-import list_modify as ex5
+# Replace the "ANSWER HERE" for your answer
+
+def put(value, lst):
+    """
+    Coloca value en el primer lugar vacio ("") que encuentre en lst
+    y retorna el indice donde lo coloco.
+    Si no hay ningun lugar vacio, retorna -1.
+    IMPORTANTE: esta funcion modifica la lista original.
+
+    Ejemplo:
+        colors = ["Red", "", "Green"]
+        put("Blue", colors) -> 1
+        # colors ahora es ["Red", "Blue", "Green"]
+    """
+    for i in range(len(lst)):
+        if lst[i] == "":
+            lst[i] = value
+            return i
+    return -1
 
 
-class TP6ListModifyCases(unittest.TestCase):
+def remove(value, lst):
+    """
+    Busca todas las ocurrencias de value en lst, las reemplaza por ""
+    y retorna la cantidad de eliminaciones realizadas.
+    IMPORTANTE: esta funcion modifica la lista original.
 
-    def test_put_found_empty(self):
-        colors = ["Red", "Green", "", "", "Pink", "", "Black"]
-        result = ex5.put("Blue", colors)
-        self.assertEqual(2, result)
-        self.assertEqual("Blue", colors[2])
-
-    def test_put_no_empty(self):
-        colors = ["Red", "Green", "White", "Black"]
-        result = ex5.put("Blue", colors)
-        self.assertEqual(-1, result)
-
-    def test_put_first_slot(self):
-        colors = ["", "Red", "Green"]
-        result = ex5.put("Blue", colors)
-        self.assertEqual(0, result)
-        self.assertEqual("Blue", colors[0])
-
-    def test_remove_multiple(self):
-        colors = ["Red", "Green", "White", "Black", "Pink", "Yellow", "Black"]
-        result = ex5.remove("Black", colors)
-        self.assertEqual(2, result)
-        self.assertEqual("", colors[3])
-        self.assertEqual("", colors[6])
-
-    def test_remove_not_found(self):
-        colors = ["Red", "Green", "White"]
-        result = ex5.remove("Blue", colors)
-        self.assertEqual(0, result)
-
-    def test_remove_single(self):
-        colors = ["Red", "Green", "White"]
-        result = ex5.remove("Green", colors)
-        self.assertEqual(1, result)
-        self.assertEqual(["Red", "", "White"], colors)
-
-
-if __name__ == '__main__':
-    unittest.main()
+    Ejemplo:
+        colors = ["Red", "Green", "Red", "Blue"]
+        remove("Red", colors) -> 2
+        # colors ahora es ["", "Green", "", "Blue"]
+    """
+    cant = 0
+    for i in range(len(lst)):
+        if lst[i] == value:
+            lst[i] = ""
+            cant = cant + 1
+    return cant

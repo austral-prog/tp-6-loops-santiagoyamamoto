@@ -50,3 +50,4 @@ def count_negatives(numbers):
         if num < 0:
             neg += 1
     return neg
+

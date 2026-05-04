@@ -39,3 +39,4 @@ def index_of_empty(lst):
         if lst[i] == "":
             return i
     return -1
+

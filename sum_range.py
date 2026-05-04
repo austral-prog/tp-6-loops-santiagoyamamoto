@@ -7,7 +7,10 @@ def sum_to_n(n):
 
     Ejemplo: sum_to_n(5) -> 15  (1+2+3+4+5)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    ans = 0
+    for i in range(1,n + 1):
+        ans = ans + i
+    return ans
 
 
 def sum_evens(n):
@@ -17,7 +20,10 @@ def sum_evens(n):
 
     Ejemplo: sum_evens(10) -> 30  (2+4+6+8+10)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    ans = 0
+    for i in range(2,n+1,2):
+        ans = ans + i
+    return ans
 
 
 def factorial(n):
@@ -27,4 +33,7 @@ def factorial(n):
 
     Ejemplo: factorial(5) -> 120  (1*2*3*4*5)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    ans = 1
+    for i in range(1,n+1):
+        ans = ans * i
+    return ans

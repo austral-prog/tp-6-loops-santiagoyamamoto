@@ -26,7 +26,10 @@ def range_of(numbers):
 
     Ejemplo: range_of([3, 1, 7, 2]) -> 6  (7 - 1)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    max = find_max(numbers)
+    min = find_min(numbers)
+
+    return (int(max) - int(min))
 
 
 def average(numbers):
@@ -37,7 +40,19 @@ def average(numbers):
 
     Ejemplo: average([10, 20, 30]) -> 20.0
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    total = 0
+    cant = 0
+
+    if numbers == []:
+        return 0.0
+
+    else:
+        for num in numbers:
+            total = total + int(num)
+            cant += 1
+
+        return (round(total/cant,1))
+
 
 
 def describe(numbers):
@@ -50,4 +65,13 @@ def describe(numbers):
 
     Ejemplo: describe([3, 1, 7, 2]) -> "Min:1 Max:7 Range:6 Avg:3.2"
     """
-    return "ANSWER HERE"  # Remove this line and implement
+
+    if numbers == []:
+        return "Empty list"
+
+    else:
+        max = find_max(numbers)
+        min = find_min(numbers)
+        range = range_of(numbers)
+        avg = average(numbers)
+        return f"Min:{min} Max:{max} Range:{range} Avg:{avg}"

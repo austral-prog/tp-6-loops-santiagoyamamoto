@@ -33,4 +33,3 @@ def double_until(limit):
         numero = numero * 2
     return lista
 
-

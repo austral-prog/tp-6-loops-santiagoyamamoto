@@ -44,5 +44,5 @@ def collatz_sequence(n):
             lista.append(num)
         else:
             num = 3 * num + 1
-            lista.append(num)
+            lista.append(num) 
     return lista

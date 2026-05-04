@@ -7,7 +7,13 @@ def flatten(matrix):
 
     Ejemplo: flatten([[1, 2], [3, 4], [5, 6]]) -> [1, 2, 3, 4, 5, 6]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    lista = []
+
+    for i in matrix:
+        lista = lista + i
+    return lista
+
+
 
 
 def row_sums(matrix):
@@ -17,15 +23,14 @@ def row_sums(matrix):
 
     Ejemplo: row_sums([[1, 2, 3], [4, 5, 6]]) -> [6, 15]
     """
-    return "ANSWER HERE"  # Remove this line and implement
 
+    lista = []
+    total = 0
 
-def col_sums(matrix):
-    """
-    Dada una matriz (lista de listas de numeros), retorna una lista
-    donde cada elemento es la suma de la columna correspondiente.
-    Se asume que todas las filas tienen la misma longitud.
+    for i in matrix:
+        total = 0
+        for num in i:
+            total = total + int(num)
 
-    Ejemplo: col_sums([[1, 2, 3], [4, 5, 6]]) -> [5, 7, 9]
-    """
-    return "ANSWER HERE"  # Remove this line and implement
+        lista.append(total)
+    return lista
